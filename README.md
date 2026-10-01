@@ -15,7 +15,17 @@ The upstream README snapshot is retained as [`UPSTREAM_README.md`](UPSTREAM_READ
 - [`docs/workflow.md`](docs/workflow.md) describes the research-to-delivery workflow.
 - [`docs/contribution-log.md`](docs/contribution-log.md) contains verified lab activity only.
 
-The 15 reports remain candidates until each is revalidated against the live issue tracker and this source snapshot. No issue fix is included merely by importing upstream source.
+The 15 reports were frozen as a research snapshot. Four were subsequently implemented in this lab as focused internal changes: P01, P02, P03, and P05. Their PRs remain open and unmerged because the baseline PR has a required `Format & Build` failure. The other dossiers remain researched only or blocked; no claim is made that all 15 issues were solved or accepted upstream.
+
+## Final closeout status
+
+- Implemented in the lab: P01, P02, P03, and P05.
+- Internal PRs: [#3](https://github.com/jifrick/open-webui-reliability-lab/pull/3), [#4](https://github.com/jifrick/open-webui-reliability-lab/pull/4), [#5](https://github.com/jifrick/open-webui-reliability-lab/pull/5), and [#6](https://github.com/jifrick/open-webui-reliability-lab/pull/6), stacked after baseline PR [#2](https://github.com/jifrick/open-webui-reliability-lab/pull/2).
+- Merge state: no lab PR is merged; no change was accepted upstream.
+- Validation: targeted builds and focused source/harness checks passed where available. Frontend lint/type checking, browser coverage, backend test coverage, and the baseline required check retain documented limitations.
+- Research-only or blocked work: P04, P06-P15 were not implemented. P08, P09, P13, and P14 remain explicitly blocked by unavailable infrastructure or validation dependencies.
+
+Inspect `LAB_CHANGELOG.md`, `docs/contribution-log.md`, and the linked PRs for the verified closeout record. The root `CHANGELOG.md` remains the upstream Open WebUI changelog required by the application; lab-specific notes are kept separately.
 
 ## Development
 
