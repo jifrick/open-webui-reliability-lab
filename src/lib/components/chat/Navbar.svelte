@@ -46,6 +46,7 @@
 	export let scrollToTop: (() => void) | null = null;
 
 	export let chat;
+	export let archived: boolean = false;
 	export let history;
 	export let title = '';
 	export let onSaveTempChat: () => {};
@@ -126,6 +127,7 @@
 							{#if shareEnabled && chat && (chat.id || $temporaryChatEnabled)}
 								<Menu
 									{chat}
+									{archived}
 									{shareEnabled}
 									{readOnly}
 									{scrollToTop}

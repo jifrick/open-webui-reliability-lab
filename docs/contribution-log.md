@@ -5,4 +5,4 @@ Only verified project activity is recorded here. No upstream contribution is imp
 | ID | Problem | Branch | Commit | PR | CI | Review | Merge |
 |---|---|---|---|---|---|---|---|
 
-No problem implementation, commit, pull request, CI run, review, or merge has been recorded at the initial research snapshot.
+The research baseline was committed before implementation work began. P01 implementation is in progress and has not yet been committed or submitted as an internal PR.

@@ -4108,12 +4108,13 @@
 
 	const archiveChatHandler = async (id: string) => {
 		try {
-			await archiveChatById(localStorage.token, id);
+			const archivedChat = await archiveChatById(localStorage.token, id);
+			const archived = archivedChat?.archived ?? !chat?.archived;
 			initNewChat();
 			await goto('/');
 			await refreshChatList(localStorage.token, { refreshPinned: true });
 			await refreshFolderChatLists();
-			toast.success($i18n.t('Chat archived.'));
+			toast.success($i18n.t(archived ? 'Chat archived.' : 'Chat unarchived.'));
 		} catch (error) {
 			console.error('Error archiving chat:', error);
 			toast.error($i18n.t('Failed to archive chat.'));
@@ -4321,6 +4322,7 @@
 							{readOnly}
 							chat={{
 								id: $chatId,
+								archived: chat?.archived ?? false,
 								chat: {
 									title: $chatTitle,
 									models: selectedModels,
@@ -4330,6 +4332,7 @@
 									timestamp: Date.now()
 								}
 							}}
+							archived={chat?.archived ?? false}
 							{history}
 							title={$chatTitle}
 							shareEnabled={!!history.currentId}
