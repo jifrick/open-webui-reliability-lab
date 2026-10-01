@@ -2,13 +2,13 @@
 
 **Project:** Open WebUI Reliability Lab  
 **Research snapshot:** 2026-10-01  
-**Status:** Research gate finalized 2026-10-01; implementation has not started.
+**Status:** Research gate finalized 2026-10-01; closeout finalized with four implemented, unmerged internal PRs.
 
 ## Executive summary
 
 This independent lab contains a pinned source snapshot of Open WebUI and records real upstream reliability and UX reports. It supports disciplined source inspection, reproduction, regression testing, and internal engineering; any upstream code contribution remains subject to upstream policy and explicit maintainer direction. This is not an official Open WebUI repository, and internal lab activity is not an upstream contribution or acceptance.
 
-Exactly 15 live issue reports have been source-validated for this research snapshot. The original P04 report, #31663, was closed and contradicted by current behavior; it was replaced by open issue #30235, whose source-level mid-entry truncation was reproduced with synthetic records. Each frozen problem dossier records current status, source evidence, reproduction or explicit limitation, root cause, history/duplicate checks, proposed solution, acceptance criteria, test strategy, risks, and dependencies. Provider/browser/external-service behavior that could not be measured is explicitly identified rather than asserted. No application fix, branch, PR, or merge was created. This document freezes the research baseline only; it does not authorize implementation.
+Exactly 15 live issue reports were source-validated for this research snapshot. The original P04 report, #31663, was closed and contradicted by current behavior; it was replaced by open issue #30235, whose source-level mid-entry truncation was reproduced with synthetic records. Four candidates (P01, P02, P03, and P05) were later implemented in this independent lab as focused internal changes and submitted as PRs #3, #4, #5, and #6. None is merged, and no change was accepted upstream. Provider/browser/external-service behavior that could not be measured is explicitly identified rather than asserted.
 
 ## Goals
 
@@ -123,4 +123,26 @@ This is an independent project. Respect upstream contribution policy, disclose u
 
 ## Research gate outcome
 
-The research gate is complete for the 2026-10-01 snapshot. Issue state can change and must be revalidated before any implementation. No application code has been changed.
+The research gate is complete for the 2026-10-01 snapshot. Issue state can change and must be revalidated before any future implementation. The authorized implementation scope stopped after P01, P02, P03, and P05; P06 and all later problems were not started.
+
+## Final implementation status
+
+| ID | Status | Evidence |
+|---|---|---|
+| P01 | Implemented / PR open | `d891b95`, docs `85f135d`, PR [#3](https://github.com/jifrick/open-webui-reliability-lab/pull/3) |
+| P02 | Implemented / PR open | `df4dcb0`, docs `b98fdc0`, PR [#4](https://github.com/jifrick/open-webui-reliability-lab/pull/4) |
+| P03 | Implemented / PR open | `b635299`, docs `7e90834`, PR [#5](https://github.com/jifrick/open-webui-reliability-lab/pull/5) |
+| P04 | Researched only | Replacement issue #30235; no implementation |
+| P05 | Implemented / PR open | `e83564e`, docs `a2a41ba`, PR [#6](https://github.com/jifrick/open-webui-reliability-lab/pull/6) |
+| P06 | Researched only | No implementation authorized |
+| P07 | Researched only | No implementation authorized |
+| P08 | Blocked | Browser/audio infrastructure unavailable |
+| P09 | Blocked | Docling service and PDF validation unavailable |
+| P10 | Researched only | No implementation authorized |
+| P11 | Researched only | No implementation authorized |
+| P12 | Researched only | No implementation authorized |
+| P13 | Blocked | Provider/cache telemetry and retrieval infrastructure unavailable |
+| P14 | Blocked | Browser validation unavailable |
+| P15 | Researched only | No implementation authorized |
+
+The final branch stack is baseline PR #2, then P01 #3, P02 #4, P03 #5, and P05 #6. The baseline's required `Format & Build` check remains failed because the upstream preparation step mutates translation files during its clean-tree check; it was not bypassed or weakened.

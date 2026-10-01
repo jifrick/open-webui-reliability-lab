@@ -82,3 +82,7 @@ The research gate is complete for this dated snapshot and is summarized in [`PRD
 ## Research boundary and implementation gate
 
 This repository contains the actual application source. The dated research snapshot validates exactly 15 current candidates and records reproduction limitations; it does not imply that later issue changes have been reviewed. Revalidate every issue and linked fix history immediately before future implementation. This document records the exact baseline failures and does not represent them as passing.
+
+## Implementation closeout
+
+The authorized implementation phase stopped after four focused internal changes: P01, P02, P03, and P05. Their branches and PRs are stacked on the baseline import in the order recorded by `docs/contribution-log.md`; all remain open and unmerged. The implementation-specific validations are recorded in the problem dossiers and contribution log. The baseline `Format & Build` failure, frontend lint/type-check failures, absent browser regression environment, absent backend pytest suite, and unavailable external integrations remain limitations. No CI workflow was changed, no required check was bypassed, and no upstream acceptance is claimed.
