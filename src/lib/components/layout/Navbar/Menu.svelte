@@ -51,6 +51,7 @@
 	// export let tagHandler: Function;
 
 	export let chat;
+	export let archived: boolean = false;
 	export let onClose: Function = () => {};
 	export let scrollToTop: (() => void) | null = null;
 
@@ -483,7 +484,7 @@
 					}}
 				>
 					<ArchiveBox className="size-3.5" strokeWidth="1.5" />
-					<div class="flex items-center">{$i18n.t('Archive')}</div>
+					<div class="flex items-center">{$i18n.t(archived ? 'Unarchive' : 'Archive')}</div>
 				</button>
 
 				{#if $user?.role === 'admin' || ($user?.permissions?.chat?.delete ?? true)}
