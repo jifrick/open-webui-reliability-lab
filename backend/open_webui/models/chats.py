@@ -735,6 +735,14 @@ class ChatTable:
                     # The caller built its history from an earlier read; merge so messages saved since then survive.
                     updated['history'] = self.merge_history(stored.get('history'), chat['history'])
 
+                history = updated.get('history')
+                if isinstance(history, dict) and isinstance(history.get('messages'), dict):
+                    for message in history['messages'].values():
+                        if isinstance(message, dict) and not message.get('content'):
+                            output_text = get_output_text(message.get('output'))
+                            if output_text:
+                                message['content'] = output_text
+
                 updated = self._clean_null_bytes(updated)
                 chat_item.chat = updated
                 chat_item.title = updated.get('title', 'New Chat')
